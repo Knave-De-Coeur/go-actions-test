@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  nats:
+    image: nats
+    expose:
+      - "4222"
+    ports:
+      - "8222:8222"
+      - "6222:6222"
+      - "4222:4222"
+    networks: [ "nats" ]
+
+networks:
+  action-network:
+  nats:
+    name: nats
+
+volumes:
+  action-data:
